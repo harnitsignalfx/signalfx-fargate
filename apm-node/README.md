@@ -1,8 +1,7 @@
 # signalfx-node-tracing
 
-Requirements: Debian Linux i.e. Ubuntu with ports 22/80/443/5000 unrestricted
-
 This is a Hello World style exercise to demonstrate tracing with Node using minimal Express framework.
+
 ### Step 1
 
 ```
