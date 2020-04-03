@@ -32,8 +32,8 @@ Python 3.7.6
 ```
 #### Step #2 Choose the  ```lambda_function.py``` from the enclosed folders and copy to this directory
 
-PythonDemo/lambda_function.py is for a successful invocation
-PythonBite/lambda_function.py is for a successful invocation with an error
+```PythonDemo/lambda_function.py``` is for a successful invocation
+```PythonBite/lambda_function.py``` is for a successful invocation with an error
 
 #### Step #3 Add file lambda_function.py to deployment package ```lambda_function.zip```
 ```
