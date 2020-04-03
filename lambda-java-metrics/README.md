@@ -1,13 +1,11 @@
 # signalfx-lambda-java-metrics
 
-### This example creates a simple HelloWorld Lambda Function with metrics visible in SignalFx without CloudWatch enabled.
+This example creates a simple HelloWorld Lambda Function with metrics visible in SignalFx without CloudWatch enabled.
 
 Requirements:
 
-1. SignalFx account
-1. Linux (or MacOS system with AWS CLI installed
-
-This is not official product documentation. Official SignalFx documentation is here: [https://docs.signalfx.com](https://docs.signalfx.com)
+Same requirements as described at top of repo
+AWS CLI installed 
 
 #### Step #0 Create your lambda function in AWS
 
