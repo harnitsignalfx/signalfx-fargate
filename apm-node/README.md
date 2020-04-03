@@ -2,12 +2,7 @@
 
 Requirements: Debian Linux i.e. Ubuntu with ports 22/80/443/5000 unrestricted
 
-This is a Hello World style exercise to demonstrate SignalFx APM2.0 instrumentation and tracing with Node using minimal Express framework.
-
-This is not official product documentation. Official SignalFx documentation is here: [https://docs.signalfx.com](https://docs.signalfx.com)
-
-
-
+This is a Hello World style exercise to demonstrate tracing with Node using minimal Express framework.
 ### Step 1
 
 ```
