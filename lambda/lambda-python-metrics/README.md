@@ -30,19 +30,11 @@ Example:
 $ python3 --version
 Python 3.7.6
 ```
-#### Step #2 Create file ```lambda_function.py``` with following code
-```
-import json
-import signalfx_lambda
+#### Step #2 Choose the  ```lambda_function.py``` from the enclosed folders and copy to this directory
 
-@signalfx_lambda.emits_metrics
-def lambda_handler(event, context):
-    # TODO implement
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
-    }
-```
+PythonDemo/lambda_function.py is for a successful invocation
+PythonBite/lambda_function.py is for a successful invocation with an error
+
 #### Step #3 Add file lambda_function.py to deployment package ```lambda_function.zip```
 ```
 mkdir ./package && pip3 install --target ./package signalfx_lambda
@@ -53,21 +45,23 @@ zip lambda_function.zip lambda_function.py
 cd ./package && zip -r ../lambda_function.zip . && cd ..
 ```
 #### Step #5 Update lambda function
+
+For PythonDemo:
 ```
 aws lambda update-function-code --function-name PythonDemo --zip-file fileb://lambda_function.zip
+```
+
+For PythonBite:
+```
+aws lambda update-function-code --function-name PythonBite --zip-file fileb://lambda_function.zip
 ```
 #### Step #6 Test lambda function and send output to test.txt
 ```
 aws lambda invoke --function-name PythonDemo test.txt
 ```
-stdout should show:
+or
 ```
-{
-    "StatusCode": 200,
-    "ExecutedVersion": "$LATEST"
-}
+aws lambda invoke --function-name PythonBite test.txt
 ```
-After invoking, test.txt will now show:
-```
-{"statusCode": 200, "body": "\"Hello from Lambda!\""}
-```
+
+You can use the enclosed load test scripts to test at scale.
