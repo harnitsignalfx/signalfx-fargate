@@ -1,10 +1,6 @@
 # signalfx-apm2-python
 
-Requirements: Debian Linux i.e. Ubuntu with ports 22/80/443/5000 unrestricted
-
-This is a Hello World style exercise to demonstrate SignalFx APM2.0 instrumentation and tracing with Python using a minimal flask server example. 
-
-This is not official product documentation. Official SignalFx documentation is here: [https://docs.signalfx.com](https://docs.signalfx.com)
+This is a Hello World style exercise to demonstrate tracing with Python using a minimal Flask server example. 
 
 ### Step #1 Install SignalFx Agent 5.02 or higher
 
