@@ -17,7 +17,7 @@ For this workshop you must have the following installed:
 
 2. Signalfx Account
 
-3. Complete dot.net installation of all components as shown here: https://docs.microsoft.com/en-us/dotnet/core/install/
+3. Complete .NET installation of all components as shown here: https://docs.microsoft.com/en-us/dotnet/core/install/
 
 4. Configuration of SignalFx SmartAgent for uAPM as shown here: https://docs.signalfx.com/en/latest/apm2/apm2-getting-started/apm2-smart-agent.html
 
