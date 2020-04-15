@@ -51,7 +51,7 @@ This example will execute two tasks:
 
 And we will verify that traces are being sent via the SignalFx Smart Agent and dasbhoard.
 
-#### Step 1: Install and Run .NET ASP Web Server
+#### Step 1: Install And Run .NET ASP Web Server
 
 Choose a directory outside of this repo i.e. ~ and execute the following steps:
 
@@ -65,7 +65,7 @@ Choose a directory outside of this repo i.e. ~ and execute the following steps:
 
 This will create a web server running on port 5000
 
-#### Step 2: Run the .NET Trace Builder from this repo
+#### Step 2: Run the .NET Trace Builder From This Repo
 
 In a separate command line on your linux server, in the directory of this repo:
 
@@ -77,10 +77,14 @@ Then run the trace builder from this repo in the same directory as the `Program.
 
 This will execute a loop slowly building 10,000 parent spans. These will appear as separate service endpoints in the SignalFx APM dashboard but you can look at the `MyCoreService` service dashboard and see trace count metrics correctly.
 
-#### Step 3: Check SignalFx Agent status to verify traces are being sent
+#### Step 3: Check SignalFx Agent Status To Verify Traces Are Being Sent
 
 `signalfx agent status`
 
 Below you can see tmux three panes on left, and SignalFx dashboard on right.
 
 ![image-20200415082344073](image-20200415082344073.png)
+
+#### Step 4: End Example
+
+`Ctrl-c` out of each running process (web server and trace builder) to halt each.
