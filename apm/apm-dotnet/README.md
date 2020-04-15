@@ -30,7 +30,7 @@ For this workshop you must have the following installed:
    2. When following the repo above, set the SignalFx Endpoint URL to Localhost instead of <MyAgentorGateway>
 
       1. ```
-         export SIGNALFX_ENDPOINT_URL='http://localhost:9080/v1/trace'
+         export SIGNALFX_ENDPOINT_URL='http://localhost:9080/v1/trace
          ```
 
 #### Recommended
@@ -40,8 +40,6 @@ Install `tmux`and execute the following steps in three separate panes so that yo
 `sudo apt-get install tmux`
 
 (Ref: https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/create)
-
-
 
 #### Overview
 
