@@ -134,7 +134,8 @@ helm repo add signalfx https://dl.signalfx.com/helm-repo
 helm repo update
 ```
 
-```helm install --set signalFxAccessToken=TOKENHERE \
+```
+helm install --set signalFxAccessToken=TOKENHERE \
 --set clusterName=YOURK8SCLUSTERNAME \
 --set signalFxRealm=YOUREALMHERE \
 --set agentVersion=RELEASEVERSIONHERE \
