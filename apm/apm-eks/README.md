@@ -45,7 +45,7 @@ You should have basic familiary with AWS, your account especially access key/ID 
 
 `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" `
 
-`unzip awscliv2.zip `
+`unzip awscliv2.zip`
 
 `sudo ./aws/install`
 
@@ -94,7 +94,7 @@ eksctl Official Instructions: https://eksctl.io/introduction/installation/
 
 #### <u>**1d kubectl:**</u>
 
-**Macos:** `brew install kubectl
+**Macos:** `brew install kubectl`
 
 **Linux: **
 
@@ -109,7 +109,8 @@ eksctl Official Instructions: https://eksctl.io/introduction/installation/
 ---
 
 ### 1. Create a cluster running Amazon Elastic Kubernetes (EKS) Service
-```eksctl create cluster \
+```
+eksctl create cluster \
 --name YOUREKSCLUSTERNAMEHERE \
 --region YOURAWSREGIONHERE FOR EXAMPLE us-east-2 \
 --node-type t3.medium \
