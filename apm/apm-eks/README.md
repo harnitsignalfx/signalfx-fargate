@@ -139,7 +139,11 @@ helm repo add signalfx https://dl.signalfx.com/helm-repo
 helm repo update
 ```
 
-`helm install --set signalFxAccessToken=TOKENHERE --set clusterName=YOURK8SCLUSTERNAME --set signalFxRealm=YOUREALMHERE --set agentVersion=RELEASEVERSIONHERE --set kubeletAPI.url=https://localhost:10250 signalfx-agent signalfx/signalfx-agent`
+`helm install --set signalFxAccessToken=TOKENHERE \
+--set clusterName=YOURK8SCLUSTERNAME \
+--set signalFxRealm=YOUREALMHERE \
+--set agentVersion=RELEASEVERSIONHERE \
+--set kubeletAPI.url=https://localhost:10250 signalfx-agent signalfx/signalfx-agent`
 
 Validate cluster looks healthy in SignalFx Kubernetes Navigator dashboard
 
