@@ -115,7 +115,8 @@ eksctl Official Instructions: https://eksctl.io/introduction/installation/
 --node-type t3.medium \
 --nodes-min 3 \
 --nodes-max 5 \
---version=1.15```
+--version=1.15
+```
 
 This may take some time- ensure you see your cluster live in AWS EKS console before proceeding.
 
