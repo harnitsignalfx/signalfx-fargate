@@ -139,7 +139,8 @@ helm repo update
 --set clusterName=YOURK8SCLUSTERNAME \
 --set signalFxRealm=YOUREALMHERE \
 --set agentVersion=RELEASEVERSIONHERE \
---set kubeletAPI.url=https://localhost:10250 signalfx-agent signalfx/signalfx-agent```
+--set kubeletAPI.url=https://localhost:10250 signalfx-agent signalfx/signalfx-agent
+```
 
 Validate cluster looks healthy in SignalFx Kubernetes Navigator dashboard
 
