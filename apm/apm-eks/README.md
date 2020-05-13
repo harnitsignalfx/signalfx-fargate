@@ -130,7 +130,6 @@ Check release version: https://github.com/signalfx/signalfx-agent/releases i.e. 
 helm repo add signalfx https://dl.signalfx.com/helm-repo
 ```
 
-
 ```text tab="Output"
 helm repo update
 ```
