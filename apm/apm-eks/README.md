@@ -148,19 +148,19 @@ Validate cluster looks healthy in SignalFx Kubernetes Navigator dashboard
 
 ### 3. Update SignalFX Agent Deployment in K8S for APM
 
-This repo file: `/app-dev-workshop/apm/hotrod/eks/agent-apm.yaml` has elements needed for APM. 
+This repo file: `./agent-apm.yaml` has elements needed for APM. 
 
 Substitute `YOURAPMENVIRONMENTHERE` with your chosen application environment name i.e. `KarthikHotRodApp` and `YOUREALMHERE` with your realm as identified in your SignalFx profile i.e. `us1`.
 
-After udpating `/app-dev-workshop/apm/hotrod/eks/agent-apm.yaml` then from the directory above the repo:
+After udpating `./agent-apm.yaml` then from the directory above the repo:
 
-`helm upgrade --reuse-values -f ./app-dev-workshop/apm/hotrod/eks/agent-apm.yaml signalfx-agent signalfx/signalfx-agent`
+`helm upgrade --reuse-values -f ./agent-apm.yaml signalfx-agent signalfx/signalfx-agent`
 
 ------
 
 ### 4. Deploy Hotrod Application to EKS
 
-kubectl apply -f .`/app-dev-workshop/apm/hotrod/eks/deployment.yaml` 
+kubectl apply -f .`./deployment.yaml` 
 
 To ensure the Hotrod application is running see examples below:
 
