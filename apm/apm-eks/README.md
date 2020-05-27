@@ -160,7 +160,8 @@ After udpating `./agent-apm.yaml` then from the directory above the repo:
 
 ### 4. Deploy Hotrod Application to EKS
 
-```kubectl apply -f ./deployment.yaml
+```
+kubectl apply -f ./deployment.yaml
 ```
 
 To ensure the Hotrod application is running see examples below:
