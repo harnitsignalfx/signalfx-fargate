@@ -12,30 +12,9 @@ $ npm install express signalfx-tracing
 
 ### Step 2
 
-Create ```app.js```
-
-```
-const tracer = require('signalfx-tracing').init();
-
-const express = require('express')
-const app = express()
-const port = 3000
-
-
-app.get('/', (req, res) => {
-  const span = tracer.scope().active()
-  span.setTag('requestHeader', req.header('x-my-important-header'))
-  res.send('Hello World!')
-})
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-```
-
-### Step 3
-
 Run the app: ```node app.js```
 
-### Step 4
+### Step 3
 
 In another window, exercise the Express service:
 
