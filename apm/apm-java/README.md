@@ -6,18 +6,23 @@ Tags for the span name along with a customer key:value tag are easily set.
 ## Building
 
 The example EchoServer.java example has comments indicating proper place for setting a custom operation name and span tag.
-
 EchoServer.java will run a Jetty Embeded HTTP Server.
 
-## Step 1:
+## Step 1
 
-To build and run the server, use the included shell script:
+Download current SignalFx Java autoinstrumentation .jar:
+
+```
+curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/download/signalfx-tracing.jar -o signalfx-tracing.jar
+```
+
+## Step 2: Build and run Java server
+
 ```
 $ sh run-server.sh
 ```
-You can change the name of the demo application by editing ```run-server.sh```
 
-## Step 2: Generating Traces
+## Step 3: Generating Traces
 
 To execute many times and generate a large number of traces for testing use:
 ```
