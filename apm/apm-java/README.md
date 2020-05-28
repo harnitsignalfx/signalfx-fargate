@@ -9,7 +9,7 @@ The example EchoServer.java example has comments indicating proper place for set
 
 EchoServer.java will run a Jetty Embeded HTTP Server.
 
-###Step 1:
+## Step 1:
 
 To build and run the server, use the included shell script:
 ```
@@ -17,7 +17,7 @@ $ sh run-server.sh
 ```
 You can change the name of the demo application by editing ```run-server.sh```
 
-###Step 2: Generating Traces
+## Step 2: Generating Traces
 
 To execute many times and generate a large number of traces for testing use:
 ```
