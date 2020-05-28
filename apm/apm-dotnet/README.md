@@ -33,14 +33,6 @@ For this workshop you must have the following installed:
          export SIGNALFX_ENDPOINT_URL='http://localhost:9080/v1/trace
          ```
 
-#### Recommended
-
-Install `tmux`and execute the following steps in three separate panes so that you can see everything happening at once.
-
-`sudo apt-get install tmux`
-
-(Ref: https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/create)
-
 #### Overview
 
 This example will execute two tasks:
