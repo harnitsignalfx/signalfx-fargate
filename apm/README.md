@@ -40,3 +40,7 @@ Note that you must always CHECK THAT ENVIRONMENT VARIABLES ARE SET each time you
 To install tmux:
 
 `sudo apt-get install tmux`
+
+Using tmux looks as follows:
+
+![image-20200415082344073](./apm-dotnet/image-20200415082344073.png)
