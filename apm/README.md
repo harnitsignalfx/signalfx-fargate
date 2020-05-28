@@ -29,3 +29,14 @@ Using Linux environment style:
 export SIGNALFX_SERVICE_NAME="YOURAPPNAMEHERE"
 export SIGNALFX_ENDPOINT_URL="http://localhost:9080/v1/trace"
 export SIGNALFX_ACCESS_TOKEN="YOURTOKENHERE"
+```
+
+Many of these examples involve running the traced application on same instance as exercising that application i.e. running a Python Flask webserver and then using CURL to exercise the Flask webserver and therefore generating traces.
+
+`tmux` is recommended to split your terminal into several panes so that you can run webserver in one pane, exercise with CURL in another, and check status of SignalFx agent in another. 
+
+Note that you must always CHECK THAT ENVIRONMENT VARIABLES ARE SET each time you create a new `tmux` pane.
+
+To install tmux:
+
+`sudo apt-get install tmux`
