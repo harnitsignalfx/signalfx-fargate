@@ -2,4 +2,4 @@
 
 mvn compile exec:exec \
   -Dexec.executable="java" \
-  -Dexec.args="-cp %classpath sf.main.GetExample"
+  -Dexec.args="-javaagent:signalfx-tracing.jar -cp %classpath sf.main.GetExample"

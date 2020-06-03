@@ -1,16 +1,16 @@
 package sf.main;
-import java.util.concurrent.*;
 
+import java.util.concurrent.*;
 import org.apache.commons.io.IOUtils;
 
-import com.signalfx.tracing.api.Trace;
-import com.signalfx.tracing.context.TraceScope;
+//import com.signalfx.tracing.api.Trace;
+//import com.signalfx.tracing.context.TraceScope;
 
-import io.opentracing.Scope;
-import io.opentracing.Span;
-import io.opentracing.Tracer;
-import io.opentracing.tag.Tags;
-import io.opentracing.util.GlobalTracer;
+//import io.opentracing.Scope;
+//import io.opentracing.Span;
+//import io.opentracing.Tracer;
+//import io.opentracing.tag.Tags;
+//import io.opentracing.util.GlobalTracer;
 
 import java.io.IOException;
 import okhttp3.OkHttpClient;
@@ -33,13 +33,20 @@ public class GetExample {
   }
 
   public static void main(String[] args) throws IOException {
+    int x = 1;
     GetExample example = new GetExample();
-    String response = example.run("http://httpbin.org/get");
-    System.out.println(response);
-    try {
-    TimeUnit.SECONDS.sleep(1);
-	}
-    catch (InterruptedException e) {
-	}
-  }
-}
+    while (x <= 1000 )
+      {    
+          String response = example.run("http://httpbin.org/get");
+//         System.out.println(response);
+          System.out.println(x);
+          try {
+                  TimeUnit.SECONDS.sleep(1);
+	      }
+          catch (InterruptedException e) {
+	  	System.out.println("error occurred");
+	      } // catch
+	  x++;
+      } // loop
+  } // main
+} // class
