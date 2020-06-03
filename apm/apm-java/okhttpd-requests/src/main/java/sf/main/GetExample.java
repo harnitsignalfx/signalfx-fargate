@@ -1,23 +1,13 @@
 package sf.main;
 
 import java.util.concurrent.*;
-import org.apache.commons.io.IOUtils;
-
-//import com.signalfx.tracing.api.Trace;
-//import com.signalfx.tracing.context.TraceScope;
-
-//import io.opentracing.Scope;
-//import io.opentracing.Span;
-//import io.opentracing.Tracer;
-//import io.opentracing.tag.Tags;
-//import io.opentracing.util.GlobalTracer;
+//import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-//import okhttp3.Headers;
 
 public class GetExample {
   OkHttpClient client = new OkHttpClient();
@@ -38,7 +28,7 @@ public class GetExample {
     while (x <= 1000 )
       {    
           String response = example.run("http://httpbin.org/get");
-//         System.out.println(response);
+//        System.out.println(response);
           System.out.println(x);
           try {
                   TimeUnit.SECONDS.sleep(1);
