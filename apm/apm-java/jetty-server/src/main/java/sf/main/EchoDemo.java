@@ -49,3 +49,4 @@ public class EchoDemo extends AbstractHandler {
         server.start();
         server.join();
     }
+}
