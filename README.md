@@ -1,6 +1,6 @@
-####SignalFx Examples
+#SignalFx Examples
 
-#####This is not official product documentation. Official SignalFx documentation is here: https://docs.signalfx.com
+##his is not official product documentation. Official SignalFx documentation is here: https://docs.signalfx.com
 
 These projects are designed to get up and running with various examples of SignalFx tools.
 
