@@ -11,10 +11,7 @@ RUN cd /home/code/apm/apm-java/http-requests && \
 	curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/download/signalfx-tracing.jar -o signalfx-tracing.jar
 
 # Demo endpoint will send traces without host correlation directly to SignalFx... this is for demo purposes only. Configure your trace endpoint to be your observing container or POD to correlate with host
-RUN export SIGNALFX_ENDPOINT_URL="https://ingest.YOURREALMHERE.signalfx.com/v2/trace"
-
-# Change your endpoint appropiately- here it set to localhost
-#RUN export SIGNALFX_ENDPOINT_URL="http://localhost:9080/v1/trace" && \
+RUN export SIGNALFX_ENDPOINT_URL="https://ingest.YOURREALMHERE.signalfx.com/v2/trace" && \
 # Change your service name appropiately
 	export SIGNALFX_SERVICE_NAME="YOURSERVICENAMEHERE" && \
 # Change your token name appropriately
