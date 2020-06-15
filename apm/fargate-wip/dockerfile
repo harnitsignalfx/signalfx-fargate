@@ -17,4 +17,5 @@ RUN export SIGNALFX_ENDPOINT_URL="https://ingest.YOURREALMHERE.signalfx.com/v2/t
 # Change your token name appropriately
 	export SIGNALFX_ACCESS_TOKEN="YOURTOKENHERE"
 RUN apt -y autoremove && apt-get -y autoclean
-RUN python3 python-requests.py
+RUN cd /home/code/apm/apm-python/python-requests && \
+	python3 python-requests.py
