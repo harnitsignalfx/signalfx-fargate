@@ -7,17 +7,7 @@ RUN git clone https://github.com/slernersplunk/signalfx /home/code
 RUN python3 -m pip install signalfx_tracing flask
 RUN export PATH="$HOME/.local/bin:$PATH" && \
 	sfx-py-trace-bootstrap
+#Prep for Java Tracing
 RUN cd /home/code/apm/apm-java/http-requests && \
 	curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/download/signalfx-tracing.jar -o signalfx-tracing.jar
-
-# Demo endpoint will send traces without host correlation directly to SignalFx... this is for demo purposes only. Configure your trace endpoint to be your observing container or POD to correlate with host
-RUN export SIGNALFX_ENDPOINT_URL="https://ingest.YOURREALMHERE.signalfx.com/v2/trace" && \
-# Change your service name appropiately
-	export SIGNALFX_SERVICE_NAME="YOURSERVICENAMEHERE" && \
-# Change your token name appropriately
-	export SIGNALFX_ACCESS_TOKEN="YOURTOKENHERE"
-
 RUN apt -y autoremove && apt-get -y autoclean
-
-# RUN cd /home/code/apm/apm-python/python-requests && \
-#	python3 python-requests.py
