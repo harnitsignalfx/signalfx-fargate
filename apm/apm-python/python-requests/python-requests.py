@@ -13,7 +13,7 @@ def pythonrequests():
         print(opentracing.tracer.active_span)
         with opentracing.tracer.active_span as span:
             span.set_tag(tags.SPAN_KIND, tags.SPAN_KIND_RPC_SERVER)
-        requests.get('http://localhost')
+        requests.get('http://httpbin.org/get')
     except requests.exceptions.RequestException as err:
         print(err)
 for x in range (1,1000):
