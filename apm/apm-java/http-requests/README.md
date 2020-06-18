@@ -20,7 +20,9 @@ curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/downlo
 Set the proper environment variables:
 
 export SIGNALFX_SERVICE_NAME="http-req-generator"
+
 export SIGNALFX_ENDPOINT_URL="http://localhost:9080/v1/trace"
+
 export SIGNALFX_ACCESS_TOKEN="YOURTOKENHERE"
 
 ## Step 2: Build and run Java trace generator
