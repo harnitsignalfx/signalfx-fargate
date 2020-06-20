@@ -1,0 +1,37 @@
+{
+    "family": "signalfx-fargate",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "entryPoint": [
+                "bash",
+                "-c"
+            ],
+            "portMappings": [],
+            "command": [
+                "cd /home/code/apm/apm-java/http-requsts && sh run.sh"
+            ],
+            "environment": [
+                {
+                    "name": "SIGNALFX_SERVICE_NAME",
+                    "value": "TRACE-GENERATOR"
+                },
+                {
+                    "name": "SIGNALFX_ENDPOINT_URL",
+                    "value": "http://localhost:9080/v1/trace"
+                }
+            ],
+            "dockerLabels": {
+                "app": "trace-generator"
+            },
+            "name": "trace-generator",
+            "image": "stevelsplunk/signalfx:apm1"
+        }
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "placementConstraints": []
+}
