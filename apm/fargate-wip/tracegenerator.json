@@ -1,5 +1,5 @@
 {
-    "family": "signalfx-fargate",
+    "family": "signalfx-tracegenerator",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
