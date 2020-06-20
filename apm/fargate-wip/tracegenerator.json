@@ -3,13 +3,19 @@
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
+            "name": "trace-generator",
+            "image": "stevelsplunk/signalfx:apm1",
             "entryPoint": [
                 "bash",
                 "-c"
             ],
-            "portMappings": [],
+            "portMappings": [
+                    { "containerPort": 443 },
+                    { "containerPort": 9080 }
+            ],
+            "workingDirectory": "/home/code/apm/apm-java/http-requests",
             "command": [
-                "cd /home/code/apm/apm-java/http-requsts && sh run.sh"
+                "sh run.sh"
             ],
             "environment": [
                 {
@@ -23,15 +29,12 @@
             ],
             "dockerLabels": {
                 "app": "trace-generator"
-            },
-            "name": "trace-generator",
-            "image": "stevelsplunk/signalfx:apm1"
+            }
         }
     ],
     "cpu": "256",
     "memory": "512",
     "requiresCompatibilities": [
         "FARGATE"
-    ],
-    "placementConstraints": []
+    ]
 }
