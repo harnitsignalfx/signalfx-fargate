@@ -11,9 +11,12 @@ aws ecs create-service --cluster test-cluster --service-name signalfx-demo --tas
 
 ##### Monitor
 
-`aws ecs list-task-definitions`
-`aws ecs list-services --cluster YOURCLUSTERNAMEHERE`
-`aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE`
+`aws ecs list-task-definitions
+`
+`aws ecs list-services --cluster YOURCLUSTERNAMEHERE
+`
+`aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE
+`
 
 ##### Cleanup
 
