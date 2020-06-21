@@ -1,12 +1,12 @@
 FROM openjdk:8
 RUN apt-get update
 RUN apt install -y apt-utils
-RUN apt install -y python3-pip
+#RUN apt install -y python3-pip
 RUN mkdir /home/code
 RUN git clone https://github.com/slernersplunk/signalfx /home/code
-RUN python3 -m pip install signalfx_tracing flask
-RUN export PATH="$HOME/.local/bin:$PATH" && \
-	sfx-py-trace-bootstrap
+#RUN python3 -m pip install signalfx_tracing flask
+#RUN export PATH="$HOME/.local/bin:$PATH" && \
+	#	sfx-py-trace-bootstrap
 #Prep for Java Tracing
 RUN cd /home/code/apm/apm-java/http-requests && \
 	curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/download/signalfx-tracing.jar -o signalfx-tracing.jar
