@@ -37,3 +37,5 @@ To check which version is current use:
 `aws ecs list-task-definitions`
 
 The **commands.md** file offers helpful commands for ECS Fargate management for the AWS CLI.
+
+The dockerfile is for the trace generator java dockerfile.
