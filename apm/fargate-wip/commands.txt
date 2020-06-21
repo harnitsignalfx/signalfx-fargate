@@ -1,4 +1,4 @@
-Create:
+###Create
 
 aws ecs create-cluster --cluster-name YOURCLUSTERNAMEHERE
 aws ecs register-task-definition --cli-input-json file://YOURTASKDEFINITIONHERE.json
@@ -6,14 +6,16 @@ aws ecs register-task-definition --cli-input-json file://YOURTASKDEFINITIONHERE.
 Get list of task definitions:
 aws ecs list-task-definitions
 
-aws ecs create-service --cluster test-cluster --service-name YOURTASKNAMEHERE --task-definition FAMILYNAMEHERE:VERSIONHERE --desired-count 1 --launch-type "FARGATE" --network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"
+aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \
+--desired-count 1 --launch-type "FARGATE" \
+--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"
 
-Monitor:
+###Monitor
 aws ecs list-task-definitions
 aws ecs list-services --cluster YOURCLUSTERNAMEHERE
 aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE
 
-Cleanup:
+###Cleanup
 aws ecs deregister-task-definition --task-definition FAMILYNAMEHERE:VERSIONHERE
 aws ecs delete-service --cluster YOURCLUSTERNAMEHERE --service YOURSERVICENAMEHERE --force
 aws ecs delete-cluster --cluster YOURCLUSTERNAMEHERE
