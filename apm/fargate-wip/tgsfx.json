@@ -1,14 +1,16 @@
-
 {
     "family": "signalfx-demo",
     "networkMode": "awsvpc",
+
     "containerDefinitions": [
         {
             "entryPoint": [
                 "bash",
                 "-c"
             ],
-            "portMappings": [],
+            "portMappings": [
+		    { "containerPort": 9080 }
+	    ],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -23,15 +25,15 @@
             "environment": [
                 {
                     "name": "ACCESS_TOKEN",
-                    "value": "YOURTOKENHERE"
+                    "value": "W-d2QuxAAkrgCockbk81RA"
                 },
                 {
                     "name": "INGEST_URL",
-                    "value": "https://ingest.YOURREALMHERE.signalfx.com"
+                    "value": "https://ingest.us0.signalfx.com"
                 },
                 {
                     "name": "API_URL",
-                    "value": "https://api.YOURREALMHERE.signalfx.com"
+                    "value": "https://api.us0.signalfx.com"
                 },
                 {
                     "name": "CONFIG_URL",
@@ -44,17 +46,18 @@
             "name": "signalfx-agent",
             "image": "quay.io/signalfx/signalfx-agent:5.3.2"
         },
+
         {
             "name": "trace-generator",
+	    "dockerLabels": {
+		    "agent.signalfx.com.port.9080": "true"
+	    },
             "image": "stevelsplunk/signalfx:apm1",
             "entryPoint": [
                 "bash",
                 "-c"
             ],
-            "portMappings": [
-		    { "containerPort": 443 },
-		    { "containerPort": 9080 }
-	    ],
+            "portMappings": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -70,7 +73,7 @@
             "environment": [
                 {
                     "name": "ACCESS_TOKEN",
-                    "value": "YOURTOKENHERE"
+                    "value": "W-d2QuxAAkrgCockbk81RA"
                 },
                 {
                     "name": "SIGNALFX_SERVICE_NAME",
@@ -86,10 +89,11 @@
             }
 	}
     ],
-    "executionRoleArn": "arn:aws:iam::YOURAWSIDNUMBERHERE:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::668132022375:role/ecsTaskExecutionRole",
     "cpu": "256",
     "memory": "512",
     "requiresCompatibilities": [
         "FARGATE"
     ]
+
 }
