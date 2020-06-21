@@ -8,8 +8,10 @@ https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/examp
 
 The agent.yaml file is based on the Fargate Example here:
 https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/agent.yaml
+
 However it has been slightly customized with instructions here:
 https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html
+
 The result is this file here- to use this you must change the realm of the trace endpoint url:
 https://github.com/slernersplunk/agent/blob/master/fargate/agent.yaml
 
