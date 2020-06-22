@@ -2,7 +2,7 @@ from flask import Flask, make_response, request
 from signalfx_tracing import auto_instrument, create_tracer, trace
 import opentracing
 
-tracer = create_tracer(service_name='SlernerTracedApp')
+tracer = create_tracer(service_name='FlaskServer')
 auto_instrument(tracer)
  
 app = Flask(__name__)
@@ -10,7 +10,7 @@ app = Flask(__name__)
 @trace
 def convert_response(message):
     print(opentracing.tracer.active_span)
-    return 'You said: {}\n'.format(message)
+    return 'Hello From Flask Server- You Sent: {}\n'.format(message)
 
 @app.route('/echo', methods=['POST'])
 def echo():
