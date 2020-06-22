@@ -47,7 +47,9 @@ To check which version is current use:
 
 #### Note that this demo does not generate RED metrics- only traces! 
 
-Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces.
+Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces. See below left of furthest left screen for this link.
+
+![Screenshot](screenshot.png)
 
 ### Extras
 
