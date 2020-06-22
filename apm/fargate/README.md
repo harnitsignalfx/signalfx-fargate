@@ -1,7 +1,7 @@
 This repo demonstrates a single task example of Splunk SignalFx APM in an ECS Fargate environment.
 The single task spins up two containers:
 #1 SignalFx-Agent
-#2 TraceGenerator
+#2 Trace-Generator
 
 The agent is a standard deployment of a SignalFx Fargate container as documented here:
 https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/example-fargate-task.json
@@ -9,11 +9,11 @@ https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/examp
 The agent.yaml file is based on the Fargate Example here:
 https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/agent.yaml
 
-However it has been slightly customized with instructions here:
+However it has been configured for APM with instructions here:
 https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html
 
-The result is this file here- to use this you must change the realm of the trace endpoint url:
-https://github.com/slernersplunk/agent/blob/master/fargate/agent.yaml
+The result is this file here- to use this you must change the REALM of the trace endpoint url (or set it as an environment variable) and the ENVIRONMENT tag:
+https://raw.githubusercontent.com/slernersplunk/signalfx/master/apm/agent/fargate/agent.yaml
 
 To deploy this example, you must have a Fargate ECS environment ready to go with VPC, task roles for logs, etc..
 
@@ -38,4 +38,4 @@ To check which version is current use:
 
 The **commands.md** file offers helpful commands for ECS Fargate management for the AWS CLI.
 
-The dockerfile is for the trace generator java dockerfile.
+Dockerfile for the java trace generator is here: https://raw.githubusercontent.com/slernersplunk/signalfx/master/apm/containers/dockerfile-tracegenerator-java
