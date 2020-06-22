@@ -1,4 +1,4 @@
-# SignalFx APM Trace Generator Demo For AWS ECSFargate
+# SignalFx APM Trace Generator Demo For AWS ECS Fargate
 
 This repo demonstrates a single AWS ECS Fargate task example of Splunk SignalFx APM in an ECS Fargate environment.
 The single task spins up two containers:
