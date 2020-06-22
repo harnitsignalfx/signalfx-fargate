@@ -4,18 +4,17 @@
 
     "containerDefinitions": [
         {
+            "name": "signalfx-agent",
+            "image": "quay.io/signalfx/signalfx-agent:5.3.2",
             "entryPoint": [
                 "bash",
                 "-c"
             ],
-            "portMappings": [
-		    { "containerPort": 9080 }
-	    ],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "ecs",
-                    "awslogs-region": "us-east-2",
+                    "awslogs-region": "YOURREGIONHERE",
                     "awslogs-stream-prefix": "sfxagent"
                 }
             },
@@ -25,33 +24,30 @@
             "environment": [
                 {
                     "name": "ACCESS_TOKEN",
-                    "value": "W-d2QuxAAkrgCockbk81RA"
+                    "value": "YOURTOKENHERE"
                 },
                 {
                     "name": "INGEST_URL",
-                    "value": "https://ingest.us0.signalfx.com"
+                    "value": "https://ingest.YOURREALMHERE.signalfx.com"
                 },
                 {
                     "name": "API_URL",
-                    "value": "https://api.us0.signalfx.com"
+                    "value": "https://api.YOURREALMHERE.signalfx.com"
                 },
+		{   "name": "SIGNALFX_ENDPOINT_URL",
+		    "value": "https://ingest.YOURREALMHERE.signalfx.com/v2/trace"
+		},
                 {
                     "name": "CONFIG_URL",
-                    "value": "https://raw.githubusercontent.com/slernersplunk/agent/master/fargate/agent.yaml"
+                    "value": "https://raw.githubusercontent.com/slernersplunk/signalfx/master/apm/agent/fargate/agent.yaml"
                 }
             ],
             "dockerLabels": {
                 "app": "signalfx-agent"
-            },
-            "name": "signalfx-agent",
-            "image": "quay.io/signalfx/signalfx-agent:5.3.2"
+            }
         },
-
         {
             "name": "trace-generator",
-	    "dockerLabels": {
-		    "agent.signalfx.com.port.9080": "true"
-	    },
             "image": "stevelsplunk/signalfx:apm1",
             "entryPoint": [
                 "bash",
@@ -63,7 +59,7 @@
                 "options": {
                     "awslogs-group": "ecs",
                     "awslogs-region": "us-east-2",
-                    "awslogs-stream-prefix": "tracegenerator"
+                    "awslogs-stream-prefix": "trace-generator"
                 }
             },
 	    "workingDirectory": "/home/code/apm/apm-java/http-requests",
@@ -72,12 +68,8 @@
             ],
             "environment": [
                 {
-                    "name": "ACCESS_TOKEN",
-                    "value": "W-d2QuxAAkrgCockbk81RA"
-                },
-                {
                     "name": "SIGNALFX_SERVICE_NAME",
-                    "value": "TRACE-GENERATOR"
+                    "value": "trace-generator"
                 },
                 {
                     "name": "SIGNALFX_ENDPOINT_URL",
@@ -95,5 +87,4 @@
     "requiresCompatibilities": [
         "FARGATE"
     ]
-
 }
