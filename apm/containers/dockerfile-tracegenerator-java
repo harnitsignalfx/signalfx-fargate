@@ -1,0 +1,9 @@
+FROM openjdk:8
+RUN apt-get update
+RUN apt install -y apt-utils
+RUN apt install -y maven
+RUN mkdir /home/code
+RUN git clone https://github.com/slernersplunk/signalfx /home/code
+RUN apt -y autoremove && apt-get -y autoclean
+RUN cd /home/code/apm/apm-java/http-requests && \
+	curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/download/signalfx-tracing.jar -o signalfx-tracing.jar
