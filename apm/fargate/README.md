@@ -5,8 +5,7 @@ The single task spins up two containers:
 #1 SignalFx-Agent
 #2 Trace-Generator
 
-#### Note that this demo does not generate RED metrics- only traces! Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces
-
+### SETUP
 The agent is a standard deployment of a SignalFx Fargate container as documented here:
 https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/example-fargate-task.json
 
@@ -27,10 +26,14 @@ https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.h
 And log environment here:
 https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
 
-Once this is done, you can deploy with the following commands- change the variables in caps to suit your environment.
+Once all of the above is done:
+
+### STEP 1
+Deploy with the following commands- change the variables in caps to suit your environment.
 ```
 aws ecs register-task-definition --cli-input-json file://tgsfx.json
 ```
+### STEP 2
 `aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \`
 `--desired-count 1 --launch-type "FARGATE" \`
 `--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"`
@@ -39,6 +42,14 @@ Note that the task definition will increment each time you try it- from 1 to 2 e
 To check which version is current use:
 
 `aws ecs list-task-definitions`
+
+### STEP 3
+
+#### Note that this demo does not generate RED metrics- only traces! 
+
+Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces.
+
+### Extras
 
 The **commands.md** file offers helpful commands for ECS Fargate management for the AWS CLI.
 
