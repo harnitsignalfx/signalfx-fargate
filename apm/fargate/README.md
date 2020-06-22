@@ -1,9 +1,9 @@
 # SignalFx APM Trace Generator Demo For AWS ECSFargate
 
-This repo demonstrates a single task example of Splunk SignalFx APM in an ECS Fargate environment.
+This repo demonstrates a single AWS ECS Fargate task example of Splunk SignalFx APM in an ECS Fargate environment.
 The single task spins up two containers:
-#1 SignalFx-Agent
-#2 Trace-Generator
+#1 SignalFx-Agent - sidecar to observe ECS and relay traces to SignalFx
+#2 Trace-Generator - generates 1000 traces using two frameworks
 
 ### SETUP
 The agent is a standard deployment of a SignalFx Fargate container as documented here:
@@ -15,7 +15,7 @@ https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/agent
 However it has been configured for APM with instructions here:
 https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html
 
-The result is this file here- to use this you must change the REALM of the trace endpoint url (or set it as an environment variable) and the ENVIRONMENT tag:
+The result is this file here- to use this you must change the REALM of the trace endpoint url (or set it as an environment variable) in the `tgsfx.json` task definition.
 https://raw.githubusercontent.com/slernersplunk/signalfx/master/apm/agent/fargate/agent.yaml
 
 To deploy this example, you must have a Fargate ECS environment ready to go with VPC, task roles for logs, etc..
@@ -23,17 +23,18 @@ To deploy this example, you must have a Fargate ECS environment ready to go with
 Everything to test this example follows the ECS tutorial documentation here:
 https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html
 
-And log environment here:
+And log environment tutorial here:
 https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
 
 Once all of the above is done:
 
 ### STEP 1
-Deploy with the following commands- change the variables in caps to suit your environment.
+Deploy with the following commands- change the variables in caps to suit your environment:
 ```
 aws ecs register-task-definition --cli-input-json file://tgsfx.json
 ```
 ### STEP 2
+Create the service based on the task just registered:
 `aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \`
 `--desired-count 1 --launch-type "FARGATE" \`
 `--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"`
@@ -47,7 +48,14 @@ To check which version is current use:
 
 #### Note that this demo does not generate RED metrics- only traces! 
 
-Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces. See below left of furthest left screen for this link.
+Click "Troubleshoot" in your APM console, make sure you are in the `trace-generator environment` by clicking on the pulldown menu next to "Troubleshoot", and click "Show Traces" from lower left of screen to see traces. 
+
+See below left of furthest left screen for this link.
+
+Two frameworks are being used by the trace generator to get URLs: OKHTTP and Apache.
+The Java file used is here: https://raw.githubusercontent.com/slernersplunk/signalfx/master/apm/apm-java/http-requests/src/main/java/sf/main/GetExample.java
+
+The screenshot below shows what the traces will look like.
 
 ![Screenshot](apm-screen.png)
 
