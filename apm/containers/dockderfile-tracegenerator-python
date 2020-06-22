@@ -1,0 +1,10 @@
+FROM openjdk:8
+RUN apt-get update
+RUN apt install -y apt-utils
+RUN apt install -y python3-pip
+RUN mkdir /home/code
+RUN git clone https://github.com/slernersplunk/signalfx /home/code
+RUN python3 -m pip install signalfx_tracing flask
+RUN export PATH="$HOME/.local/bin:$PATH" && \
+	sfx-py-trace-bootstrap
+RUN apt -y autoremove && apt-get -y autoclean
