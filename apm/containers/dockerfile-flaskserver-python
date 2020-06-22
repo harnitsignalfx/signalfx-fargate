@@ -7,5 +7,4 @@ RUN apt -y autoremove && apt-get -y autoclean
 RUN cd /home/code/apm/apm-python/flask && \
 python3 -m pip install signalfx_tracing flask && \
 export PATH="$HOME/.local/bin:$PATH" && \
-sfx-py-trace-bootstrap && \
-python3 flask-server.py 
+sfx-py-trace-bootstrap &&
