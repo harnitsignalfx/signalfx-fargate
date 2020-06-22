@@ -25,7 +25,7 @@
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
-      <version>9.4.24.v20191120</version>
+      <version>9.4.30.v20200611</version>
     </dependency>
     <dependency>
       <groupId>commons-io</groupId>
@@ -35,12 +35,12 @@
     <dependency>
       <groupId>io.opentracing</groupId>
       <artifactId>opentracing-util</artifactId>
-      <version>0.31.0</version>
+      <version>0.33.0</version>
     </dependency>
     <dependency>
       <groupId>com.signalfx.public</groupId>
       <artifactId>signalfx-trace-api</artifactId>
-      <version>0.28.0-sfx6</version>
+      <version>0.48.0-sfx0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

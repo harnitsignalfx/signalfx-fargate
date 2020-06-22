@@ -32,6 +32,7 @@ import io.opentracing.util.GlobalTracer;
 
 public class EchoDemo extends AbstractHandler {
     @Override
+    String newLine = System.getProperty("line.separator");
     public void handle(String target, Request baseRequest, HttpServletRequest request,
         HttpServletResponse response) throws IOException, ServletException {
         try (Scope scope = GlobalTracer.get().buildSpan("MyOperation").startActive(true)) {
@@ -39,7 +40,7 @@ public class EchoDemo extends AbstractHandler {
             response.setContentType("text/plain;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_OK);
             baseRequest.setHandled(true);
-            response.getWriter().println("Hello world");
+            response.getWriter().println("Hello from Jetty Server" + newLine);
             scope.close();
         }
     }
