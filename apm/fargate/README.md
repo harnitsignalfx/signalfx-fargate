@@ -1,11 +1,11 @@
-#### Fargate Trace Generator Demo
+# Fargate Trace Generator Demo
 
 This repo demonstrates a single task example of Splunk SignalFx APM in an ECS Fargate environment.
 The single task spins up two containers:
 #1 SignalFx-Agent
 #2 Trace-Generator
 
-# Note that this demo does not generate RED metrics- only traces! Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces
+#### Note that this demo does not generate RED metrics- only traces! Click "Troubleshoot" in your APM console, make sure you are in the Trace-Generator environment, and click "Show Traces" from lower left of screen to see traces
 
 The agent is a standard deployment of a SignalFx Fargate container as documented here:
 https://github.com/signalfx/signalfx-agent/blob/master/deployments/fargate/example-fargate-task.json
