@@ -31,6 +31,7 @@ monitors:
     listenAddress: 0.0.0.0:9080
     extraSpanTags:
       environment: trace-generator
+# environment is your 'tenant' to separate organizations
 
   - type: ecs-metadata
     excludedImages:
