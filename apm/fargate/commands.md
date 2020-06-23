@@ -3,8 +3,7 @@
 `aws ecs create-cluster --cluster-name YOURCLUSTERNAMEHERE`   
 `aws ecs register-task-definition --cli-input-json file://YOURTASKDEFINITIONHERE.json`   
 
-```
-aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \```   
+```aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \```   
 ```--desired-count 1 --launch-type "FARGATE" \```   
 ```--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"
 ```
