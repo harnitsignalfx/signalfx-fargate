@@ -1,7 +1,6 @@
 #### Create
 
 `aws ecs create-cluster --cluster-name YOURCLUSTERNAMEHERE`   
-
 `aws ecs register-task-definition --cli-input-json file://YOURTASKDEFINITIONHERE.json`   
 
 ```
