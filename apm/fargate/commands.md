@@ -10,13 +10,13 @@ aws ecs create-service --cluster test-cluster --service-name signalfx-demo --tas
 ```--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIDHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"
 ```
 
-#### Monitor.   
+#### Monitor   
     
 `aws ecs list-task-definitions\`   
 `aws ecs list-services --cluster YOURCLUSTERNAMEHERE`   
 `aws ecs describe-services --cluster YOURCLUSTERNAMEHERE --services YOURSERVICENAMEHERE`   
 
-#### Cleanup.   
+#### Cleanup   
     
 `aws ecs deregister-task-definition --task-definition FAMILYNAMEHERE:VERSIONHERE`   
 `aws ecs delete-service --cluster YOURCLUSTERNAMEHERE --service YOURSERVICENAMEHERE --force`   
