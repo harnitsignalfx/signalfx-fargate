@@ -3,8 +3,9 @@
 This repo demonstrates a reference implemenation for a single AWS ECS Fargate task example of Splunk SignalFx APM.
 
 The single task spins up two ECS Fargate containers:
-#1 SignalFx-Agent - sidecar to observe ECS and relay traces to SignalFx
-#2 Trace-Generator - generates 1000 traces using two frameworks
+
+#1 SignalFx-Agent - sidecar to observe ECS and relay traces to SignalFx. 
+#2 Trace-Generator - generates 1000 traces using two frameworks. 
 
 ### SETUP
 The agent is a standard deployment of a SignalFx Fargate container as documented here:
