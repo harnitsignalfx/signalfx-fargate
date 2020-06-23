@@ -70,6 +70,6 @@ The trace generator is using the automatic instrumentation for tracing from Sign
 
 ### Extras
 
-The **commands.md** file offers helpful commands for ECS Fargate management for the AWS CLI.
+The https://github.com/slernersplunk/signalfx/blob/master/apm/fargate/commands.md file offers helpful commands for ECS Fargate management for the AWS CLI.
 
 Dockerfile for the java trace generator is here: https://raw.githubusercontent.com/slernersplunk/signalfx/master/apm/containers/dockerfile-tracegenerator-java
