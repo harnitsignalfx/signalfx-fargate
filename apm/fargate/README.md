@@ -1,7 +1,8 @@
 # SignalFx APM Trace Generator Demo For AWS ECS Fargate
 
-This repo demonstrates a single AWS ECS Fargate task example of Splunk SignalFx APM in an ECS Fargate environment.
-The single task spins up two containers:
+This repo demonstrates a reference implemenation for a single AWS ECS Fargate task example of Splunk SignalFx APM.
+
+The single task spins up two ECS Fargate containers:
 #1 SignalFx-Agent - sidecar to observe ECS and relay traces to SignalFx
 #2 Trace-Generator - generates 1000 traces using two frameworks
 
@@ -58,6 +59,12 @@ The Java file used is here: https://raw.githubusercontent.com/slernersplunk/sign
 The screenshot below shows what the traces will look like.
 
 ![Screenshot](apm-screen.png)
+
+### How it works
+
+The key to this working is that the trace generator container is sending its traces to ```localhost``` which is network addresss shared with the agent container. The agent running in the agent container sees these traces and has been configured to send them to SignalFx.
+
+The trace generator is using the automatic instrumentation for tracing from SignalFx and uses the OkHTTP and Apache http request libraries to request a neutral external website (set up in the Java code) once per second, 1000 times.
 
 ### Extras
 
