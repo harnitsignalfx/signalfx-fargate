@@ -36,10 +36,12 @@ Deploy with the following commands- change the variables in caps to suit your en
 aws ecs register-task-definition --cli-input-json file://tgsfx.json
 ```
 ### STEP 2
-Create the service based on the task just registered:
+Create the service based on the task just registered:    
+
 `aws ecs create-service --cluster test-cluster --service-name signalfx-demo --task-definition signalfx-demo:1 \`    
 `--desired-count 1 --launch-type "FARGATE" \`    
 `--network-configuration "awsvpcConfiguration={subnets=[subnet-YOURSUBNETIHERE],securityGroups=[sg-YOURSECURITYGROUPIDHERE],assignPublicIp=ENABLED}"`    
+
 Note that the task definition will increment each time you try it- from 1 to 2 etc... 
 To check which version is current use:
 
