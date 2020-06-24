@@ -1,6 +1,7 @@
 # Java Tag Generator Using HTTP GET request libraries
 
 GetExample.java is an example of how to send GET request traces using two different libraries
+JMX metrics are enable to monitor the java stats to be seen by the SignalFx agent.
 Note that these will not generate RED service dashboard! Only spans/traces.
 
 ## Building
@@ -19,11 +20,8 @@ curl -L https://github.com/signalfx/signalfx-java-tracing/releases/latest/downlo
 
 Set the proper environment variables:
 
-export SIGNALFX_SERVICE_NAME="http-req-generator"
-
-export SIGNALFX_ENDPOINT_URL="http://localhost:9080/v1/trace"
-
-export SIGNALFX_ACCESS_TOKEN="YOURTOKENHERE"
+export SIGNALFX_SERVICE_NAME="http-req-generator"   
+export SIGNALFX_ENDPOINT_URL="http://localhost:9080/v1/trace"   
 
 ## Step 2: Build and run Java trace generator
 
