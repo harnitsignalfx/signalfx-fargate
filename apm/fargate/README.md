@@ -24,6 +24,8 @@ To deploy this example, you must have a Fargate ECS environment ready to go with
 
 Everything to test this example follows the ECS tutorial documentation here:
 https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html
+Pay critical attention to setting up VPC in advance:
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html
 
 And log environment tutorial here:
 https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
