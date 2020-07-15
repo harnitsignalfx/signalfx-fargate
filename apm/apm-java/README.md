@@ -10,13 +10,13 @@ mvn compile exec:exec \
   
 Sample SignalFx agent.yaml monitor entry for generic JMX:
 - type: collectd/genericjmx
-    host: localhost
-    port: 3000
-    mBeanDefinitions:
-      threading:
-        objectName: java.lang:type=Threading
-        values:
-        - type: gauge
-          table: false
-          instancePrefix: jvm.threads.count
-          attribute: ThreadCount
+  host: localhost
+  port: 3000
+  mBeanDefinitions:
+    threading:
+      objectName: java.lang:type=Threading
+      values:
+       - type: gauge
+         table: false
+         instancePrefix: jvm.threads.count
+         attribute: ThreadCount
